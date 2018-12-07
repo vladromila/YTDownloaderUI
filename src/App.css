@@ -1,32 +1,155 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* Lazy Load Styles */
+.card-image {
+	display: block;
+	min-height: 20rem; /* layout hack */
+	background: #fff center center no-repeat;
+	background-size: cover;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+
+.card-image.is-loaded {
+	filter: none; /* remove the blur on fullres image */
+	transition: filter 1s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.card-list {
+	display: block;
+	margin: 1rem auto;
+	padding: 0;
+	font-size: 0;
+	text-align: center;
+	list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+	display: inline-block;
+	width: 90%;
+	max-width: 20rem;
+	margin: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	overflow: hidden;
+	box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover {
+	transform: translateY(-0.5rem) scale(1.0125);
+	box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+}
+
+.card-description { 
+	background-color: white;
+	display: block;
+	padding: 1em 0.5em;
+	color: #1976D2;
+	text-decoration: none;
+}
+
+.card-description > h2 {
+	margin: 0 0 0.5em;
+}
+
+.card-description > p {
+	margin: 0;
+}
+#namer {
+ position: relative;
+ max-width: 80%;
+ margin: 150px auto 0;
+}
+
+#namer input {
+ border: 0;
+ border-bottom: 2px solid #1976D2;
+ width: 100%;
+ font-size: 30px;
+ line-height: 35px;
+ height: 70px;
+ text-align: center;
+ padding-bottom: 10px;
+ padding-top: 10px;
+ background: transparent;
+	color: white;
+}
+
+#namer input.shake {
+ animation-name: shaker;
+ animation-duration: 200ms;
+ animation-timing-function: ease-in-out;
+ animation-delay: 0s;
+}
+
+#namer input:focus {
+ outline: 0;
+	color: #BBDEFB;
+}
+
+#namer input::placeholder {
+ color: #1976D2;
+}
+
+.namer-controls div span {
+    margin-top: 10px;
+ box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+ padding: 10px 5px;
+ width: 95%;
+ display: inline-block;
+ margin-right: 5%;
+ border-radius: 30px;
+ font-size: 14px;
+ text-transform: uppercase;
+ letter-spacing: 0.3px;
+}
+
+.namer-controls div span:last-child {
+ margin-right: 0;
+}
+
+.namer-controls div span.active {
+ box-shadow: none;
+ background-color: #1976D2;
+ color: #fff;
+}
+
+#namer-input.serious input {
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ font-family: 'Andada', serif;
+ font-weight: 500;
+}
+
+#namer-input.modern input {
+ font-family: 'Raleway', sans-serif;
+ text-transform: lowercase;
+ font-weight: 300;
+ letter-spacing: 10px;
+}
+
+#namer-input.cheeky input {
+ font-family: 'Permanent Marker', cursive;
+ font-size: 40px;
+}
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: black;
 }
